@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_bank.Views"
         mc:Ignorable="d"
-        Title="AccountWindow" Height="450" Width="800">
+        Title="AccountWindow" Height="600" Width="700">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Label Name="txtLoggedInType" Content="User" Grid.Column="4" Grid.Row="0" HorizontalContentAlignment="Right" VerticalContentAlignment="center" FontSize="16" />
+        <Label Name="txtUser" Content="Username" Grid.Column="5" Grid.Row="0" HorizontalContentAlignment="Left" VerticalContentAlignment="center" FontSize="16" />
+        <Label Name="txtLogOut" Content="Logout" Grid.Column="5" Grid.Row="0" HorizontalContentAlignment="Right" VerticalContentAlignment="center" FontSize="16" Margin="0 0 30 0"/>
+
+        <Label Content="Welcome Back [UserName]" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" FontSize="25" HorizontalAlignment="Center"/>
+        <Border  BorderBrush="black" BorderThickness="1" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" CornerRadius="10"/>
+        <Label Content="SALARY Account :" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Height="25"/>
+        <Label/>
     </Grid>
 </Window>

@@ -30,6 +30,8 @@ namespace WPF_bank.Views
             AccountWindow accountWindow = new();
             accountWindow.Show();
             Close();
+
         }
+
     }
 }
