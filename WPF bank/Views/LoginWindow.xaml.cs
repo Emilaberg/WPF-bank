@@ -11,7 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using WPF_bank.Classes;
+using WPF_bank.Controllers;
+using WPF_bank.Managers;
 namespace WPF_bank.Views
 {
     /// <summary>
@@ -19,6 +21,7 @@ namespace WPF_bank.Views
     /// </summary>
     public partial class LoginWindow : Window
     {
+        
         public LoginWindow()
         {
             InitializeComponent();
@@ -26,10 +29,26 @@ namespace WPF_bank.Views
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            //run LoginController, if it returns true, run viewsControllern
+            if(LoginController.Validateinput(txtUsername.Text, txtPassword.Password))
+            {
+                //Jag sätter den inloggade usern i logincontrollern om username och password stämmer överens.
+                //loginuser
+                AccountWindow accountWindow = ViewsController.AccountWindow(true);
 
-            AccountWindow accountWindow = new();
-            accountWindow.Show();
-            Close();
+                if (accountWindow == null)
+                {
+                    return;
+                    
+                }
+                accountWindow.Show();
+                Close();
+            }
+            else
+            {
+                //om det blir false kommer den messagebox visas.
+                return;
+            }
 
         }
 

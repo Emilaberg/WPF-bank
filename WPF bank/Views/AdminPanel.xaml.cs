@@ -11,27 +11,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WPF_bank.Controllers;
-using WPF_bank.Managers;
 
 namespace WPF_bank.Views
 {
     /// <summary>
-    /// Interaction logic for AccountWindow.xaml
+    /// Interaction logic for AdminPanel.xaml
     /// </summary>
-    public partial class AccountWindow : Window
+    public partial class AdminPanel : Window
     {
-        
-        public AccountWindow()
+        public AdminPanel()
         {
             InitializeComponent();
-            
         }
 
-        private void Admin_Click(object sender, RoutedEventArgs e)
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ViewsController.adminPanel().Show();
-            Close();
+            BtnRemove.Opacity = 1;
         }
     }
 }

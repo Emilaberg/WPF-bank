@@ -34,9 +34,37 @@
         <Label Name="txtLogOut" Content="Logout" Grid.Column="5" Grid.Row="0" HorizontalContentAlignment="Right" VerticalContentAlignment="center" FontSize="16" Margin="0 0 30 0"/>
 
         <Label Content="Welcome Back [UserName]" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" FontSize="25" HorizontalAlignment="Center"/>
+        
+        <!--Salary Accounts-->
         <Border  BorderBrush="black" BorderThickness="1" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" CornerRadius="10"/>
-        <Label Content="SALARY Account :" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalAlignment="Right"/>
-        <TextBox Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Height="25"/>
-        <Label/>
+        <Label Content="Salary Account :" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox IsReadOnly="True" Text="dfsfd" VerticalContentAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Height="25" Width="150"/>
+        <Button Content="Deposit" Grid.Column="3" Grid.Row="3" Height="30" Width="55" Background="White" BorderBrush="LimeGreen" BorderThickness="2" HorizontalAlignment="Right"/>
+        <Button Content="Withdraw" Grid.Column="4" Grid.Row="3" Height="30" Width="65" Background="White" BorderBrush="DarkRed" BorderThickness="2" />
+        
+        <!--Savings Accounts-->
+        <Border  BorderBrush="black" BorderThickness="1" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" CornerRadius="10"/>
+        <Label Content="Savings Account :" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox IsReadOnly="True" Text="dfsfd" VerticalContentAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" Height="25" Width="150"/>
+        <Button  Content="Deposit" Grid.Column="3" Grid.Row="5" Height="30" Width="55" Background="White" BorderBrush="LimeGreen" BorderThickness="2" HorizontalAlignment="Right"/>
+        <Button  Content="Withdraw" Grid.Column="4" Grid.Row="5" Height="30" Width="65" Background="White" BorderBrush="DarkRed" BorderThickness="2" />
+        
+        <!--Transfer-->
+        <Button Name="BtnTransfer" Content="Transfer" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Left" Background="White"  Height="25" Width="60"/>
+        <!--Admin Panel-->
+        <Button Name="Admin" Content="Admin Panel" Grid.Column="4" Grid.Row="6" VerticalAlignment="Center"  Background="White" Width="80" Height="25" BorderBrush="Blue" BorderThickness="2" Click="Admin_Click"/>
+
+        <!--transferWindow-->
+        <Label Name="lblFromAccount" Content="From" Grid.Column="1" Grid.Row="7" FontSize="16" VerticalAlignment="Bottom" Padding="0"/>
+        <TextBox Name="txtFromAccount" Grid.Column="1" Grid.Row="8" VerticalAlignment="Top" Height="25" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0"/>
+        <Label Name="lblToAccount" Content="To" Grid.Column="2" Grid.Row="7" FontSize="16" VerticalAlignment="Bottom" Padding="0"/>
+        <TextBox Name="txtToAccount" Grid.Column="2" Grid.Row="8" VerticalAlignment="Top" Height="25" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0"/>
+        <!--transferWindow och DepositWindow/WithdrawWindow-->
+        <Label Name="lblAmount" Content="Amount" Grid.Column="3" Grid.Row="7" FontSize="16" VerticalAlignment="Bottom" Padding="0"/>
+        <TextBox Name="txtAmount" Grid.Column="3" Grid.Row="8" VerticalAlignment="Top" Height="25" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0"/>
+
+        <Button Name="BtnExecuteTransfer" Content="Execute" Grid.Column="4" Grid.Row="8" VerticalAlignment="Top" HorizontalAlignment="Center" Background="White"  Height="25" Width="60" BorderBrush="LimeGreen" BorderThickness="1"/>
+        <Label Name="txtSuccess" Content="Success" Grid.Column="5" Grid.Row="8" FontSize="12" VerticalAlignment="Top" Padding="0 3 0 0"/>
+
     </Grid>
 </Window>

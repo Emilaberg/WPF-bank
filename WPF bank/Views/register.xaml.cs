@@ -17,9 +17,9 @@ namespace WPF_bank.Views
     /// <summary>
     /// Interaction logic for register.xaml
     /// </summary>
-    public partial class register : Window
+    public partial class Register : Window
     {
-        public register()
+        public Register()
         {
             InitializeComponent();
         }
