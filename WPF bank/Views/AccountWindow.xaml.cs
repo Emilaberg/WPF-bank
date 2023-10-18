@@ -129,5 +129,41 @@ namespace WPF_bank.Views
             ViewsController.Logout().Show();
             Close();
         }
+
+        private void BtnExecuteTransfer_Click(object sender, RoutedEventArgs e)
+        {
+            if(LastPressed == "btnSalaryDeposit")
+            {
+                UserManager.CurrentSignedInUser.AccountManager.Deposit("salary", int.Parse(txtAmount.Text));
+            }else if(LastPressed == "btnSavingsDeposit")
+            {
+                UserManager.CurrentSignedInUser.AccountManager.Deposit("savings", int.Parse(txtAmount.Text));
+                
+            }else if(LastPressed == "btnSalaryWithdraw")
+            {
+                UserManager.CurrentSignedInUser.AccountManager.Withdraw("salary", int.Parse(txtAmount.Text));
+            }else if(LastPressed == "btnSavingsWithdraw")
+            {
+                UserManager.CurrentSignedInUser.AccountManager.Withdraw("savings", int.Parse(txtAmount.Text));
+            }else if(LastPressed == "BtnTransfer")
+            {
+                if(txtFromAccount.Text.ToLower() == "salary")
+                {
+                    UserManager.CurrentSignedInUser.AccountManager.Transfer("salary", int.Parse(txtAmount.Text));
+                }
+                else if(txtFromAccount.Text.ToLower() == "savings") 
+                {
+                    UserManager.CurrentSignedInUser.AccountManager.Transfer("savings", int.Parse(txtAmount.Text));
+                }
+            }
+
+            Updateui();
+        }
+
+        private void Updateui()
+        {
+            txtSalary.Text = UserManager.CurrentSignedInUser.AccountManager.SalaryAccount.Salary.ToString();
+            txtSavings.Text = UserManager.CurrentSignedInUser.AccountManager.SavingsAccount.Savings.ToString();
+        }
     }
 }

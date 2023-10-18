@@ -62,7 +62,7 @@
         <Label Visibility="Hidden" Name="lblAmount" Content="Amount" Grid.Column="3" Grid.Row="7" FontSize="16" VerticalAlignment="Bottom" Padding="0"/>
         <TextBox Visibility="Hidden" Name="txtAmount" Grid.Column="3" Grid.Row="8" VerticalAlignment="Top" Height="25" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1" Margin="0 0 20 0"/>
 
-        <Button Visibility="Hidden" Name="BtnExecuteTransfer" Content="Execute" Grid.Column="4" Grid.Row="8" VerticalAlignment="Top" HorizontalAlignment="Center" Background="White"  Height="25" Width="60" BorderBrush="LimeGreen" BorderThickness="1"/>
+        <Button Visibility="Hidden" Name="BtnExecuteTransfer" Content="Execute" Grid.Column="4" Grid.Row="8" VerticalAlignment="Top" HorizontalAlignment="Center" Background="White"  Height="25" Width="60" BorderBrush="LimeGreen" BorderThickness="1" Click="BtnExecuteTransfer_Click"/>
         <Label Visibility="Hidden" Name="txtSuccess" Content="Success" Grid.Column="5" Grid.Row="8" FontSize="12" VerticalAlignment="Top" Padding="0 3 0 0"/>
 
     </Grid>
