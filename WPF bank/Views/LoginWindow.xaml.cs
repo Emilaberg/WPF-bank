@@ -34,15 +34,19 @@ namespace WPF_bank.Views
             {
                 //Jag sätter den inloggade usern i logincontrollern om username och password stämmer överens.
                 //loginuser
-                AccountWindow accountWindow = ViewsController.AccountWindow(true);
-
-                if (accountWindow == null)
+                
+                if (UserManager.CurrentSignedInUser.GetType().Name == "Admin")
                 {
-                    return;
+                    AdminPanel adminPanel = new();
+                    adminPanel.Show();
                     
+                }else
+                {
+                    AccountWindow accountWindow = ViewsController.AccountWindow(true);
+                    accountWindow.Show();
                 }
-                accountWindow.Show();
                 Close();
+
             }
             else
             {
@@ -52,5 +56,11 @@ namespace WPF_bank.Views
 
         }
 
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            Register RegisterWindow = ViewsController.Register();
+            RegisterWindow.Show();
+            Close();
+        }
     }
 }

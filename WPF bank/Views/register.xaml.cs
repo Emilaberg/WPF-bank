@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPF_bank.Controllers;
 
 namespace WPF_bank.Views
 {
@@ -22,6 +23,29 @@ namespace WPF_bank.Views
         public Register()
         {
             InitializeComponent();
+        }
+
+        private void BtnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            if (RegisterController.ValidateRegister(txtUsername.Text, txtPassword.Password, txtConfirmPassword.Password))
+            {
+                //Jag sätter den inloggade usern i logincontrollern om username och password stämmer överens.
+                //loginuser
+                AccountWindow accountWindow = ViewsController.AccountWindow(true);
+
+                if (accountWindow == null)
+                {
+                    return;
+
+                }
+                accountWindow.Show();
+                Close();
+            }
+            else
+            {
+                //om det blir false kommer den messagebox visas.
+                return;
+            }
         }
     }
 }

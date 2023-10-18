@@ -12,7 +12,11 @@ namespace WPF_bank.Managers
         public static List<User> Users { get; set; } = new() 
         { 
             new Client("test", "password"),
-            new Admin("Admin", "admin")
+            new Client("Emil", "password1"),
+            new Client("benny", "password2"),
+            new Client("test1", "password3"),
+            new Client("a", "a"),
+            new Admin("admin", "1")
         };
 
         public static User? CurrentSignedInUser { get; set; }

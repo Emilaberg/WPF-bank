@@ -9,8 +9,8 @@ namespace WPF_bank.Classes
 {
     internal class Client : User
     {
-        //När clien skapas, så skapas en accountmanager,med båda accounts.
-        public AccountManager AccountManager { get; set; } = new();
+        public int AccountNumber { get; set; } = Guid.NewGuid().GetHashCode();
+
         
         public Client(string username, string password) :base(username,password)
         {

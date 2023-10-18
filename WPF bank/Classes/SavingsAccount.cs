@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 using WPF_bank.Managers;
 namespace WPF_bank.Classes
 {
-    internal class SavingsAccount : AccountManager
+    public class SavingsAccount
     {
-        public decimal Savings { get; set; } = new Random().Next(100, 10001);
-        public new int AccountNumber { get; set; } = Guid.NewGuid().GetHashCode();
+        public decimal Savings { get; set; } = new Random().Next(100, 1001);
+        private int SavingsAccountNumber { get; set; } = Guid.NewGuid().GetHashCode();
 
-        
-
-        public int GetAccountNumber()
+        public int GetSavingsAccountNumber()
         {
-            return AccountNumber;
+            return SavingsAccountNumber;
         }
     }
 }

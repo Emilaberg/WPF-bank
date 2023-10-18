@@ -26,34 +26,24 @@ namespace WPF_bank.Controllers
 
         public static AccountWindow AccountWindow(bool loggedIn)
         {
-            if(loggedIn)
-            {
-                AccountWindow accountWindow = new();
-                return accountWindow;
-            }
-            return null;
+            
+            AccountWindow accountWindow = new();
+            return accountWindow;
+            
         }
-
+        public static LoginWindow Logout()
+        {
+            UserManager.CurrentSignedInUser = null;
+            LoginWindow loginWindow = new();
+            return loginWindow;
+        }
         public static Register Register()
         {
             Register register = new();
             return register;
         }
 
-        public static object UpdateUi(string c)
-        {
-            if(c == "AccountWindow")
-            {
-                //returnea account window data
-                return new { };
-            }
-            else if(c == "AdminPanel")
-            {
-                //Returnera Alla users
-                return new { };
-            }
-            return new { };
-        }
+        
 
     }
 }

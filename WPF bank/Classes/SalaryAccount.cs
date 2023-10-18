@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 using WPF_bank.Managers;
 namespace WPF_bank.Classes
 {
-    internal class SalaryAccount : AccountManager
+    public class SalaryAccount
     {
-        public decimal Salary { get; set; } = new Random().Next(100, 1001);
-        public new int AccountNumber { get; set; } = Guid.NewGuid().GetHashCode();
-
+        public decimal Salary { get; set; } = new Random().Next(100, 10001);
+        private int SalaryAccountNumber { get; set; } = Guid.NewGuid().GetHashCode();
         
-
-        public int GetAccountNumber()
+        public int GetSalaryAccountNumber()
         {
-            return AccountNumber;
+            return SalaryAccountNumber;
         }
 
     }

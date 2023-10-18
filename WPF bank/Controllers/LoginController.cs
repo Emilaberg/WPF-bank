@@ -44,12 +44,10 @@ namespace WPF_bank.Controllers
                     {
                         MessageBox.Show("user Found, but username is incorrect", "Alert");
                         return false;
-                    }else // the types user doesnt exits? do you want to register?
-                    {
-                        MessageBox.Show("There are no user registrerd with these credentials.", "Alert");
-                        return false;
                     }
                 }
+                MessageBox.Show("There are no user registrerd with these credentials.", "Alert");
+                
                 return false;
             }
         }

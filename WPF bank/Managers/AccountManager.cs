@@ -7,14 +7,34 @@ using WPF_bank.Classes;
 
 namespace WPF_bank.Managers
 {
-    internal class AccountManager
+    public class AccountManager
     {
-        protected decimal totalFunds = 0;
-        public int AccountNumber { get; set; } = Guid.NewGuid().GetHashCode();
-        public static SalaryAccount SalaryAccount { get; set; } = new();
-        public static SavingsAccount SavingsAccount { get; set;} = new();
+        public static decimal totalFunds = 0;
+        public static int AccountNumber { get; set; }
+        public SalaryAccount SalaryAccount { get; set; } = new();
+        public SavingsAccount SavingsAccount { get; set; } = new();
 
-        
+        public bool Deposit(string to)
+        {
+            return true;
+        }
 
+        public bool Withdraw(string from)
+        {
+            return true;
+        }
+
+        public bool Deposit(string from, string to)
+        {
+            return true;
+        }
+
+        public bool Transfer(string from, string to)
+        {
+            return true;
+        }
     }
+
+
+    
 }
