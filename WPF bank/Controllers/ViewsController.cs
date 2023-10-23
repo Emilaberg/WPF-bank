@@ -24,7 +24,7 @@ namespace WPF_bank.Controllers
             return loginWindow;
         }
 
-        public static AccountWindow AccountWindow(bool loggedIn)
+        public static AccountWindow AccountWindow()
         {
             
             AccountWindow accountWindow = new();
